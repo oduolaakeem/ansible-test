@@ -1,0 +1,10 @@
+---
+
+- name: Terminates an ec2 instance that was previously launched
+  local_action:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    module: ec2
+    state: "absent"
+    instance_ids: "{{ ec2_instance_id }}"
+    region: "{{ ec2_region }}"

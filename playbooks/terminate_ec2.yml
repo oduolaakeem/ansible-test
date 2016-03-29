@@ -1,0 +1,12 @@
+--- # Master playbook to terminate an ec2 instance
+
+- name: Terminate an EC2 instance
+  hosts: local
+  user: test
+  become: yes
+  become_method: sudo
+  connection: ssh
+  vars_files:
+    - "/home/test/secure.yml" 
+  roles: 
+    - terminate_ec2
