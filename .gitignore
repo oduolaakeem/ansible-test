@@ -1,0 +1,6 @@
+.DS_store
+.ansible
+.vagrant
+.virtualenv
+.idea
+*.retry

@@ -1,0 +1,13 @@
+---
+
+- name: Launch instance
+  local_action:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    module: ec2
+    group: "{{ security_group  }}"
+    instance_type: "{{ instance_type }}"
+    image: "{{ image }}"
+    wait: true
+    region: "{{ region }}"
+  register: ec2

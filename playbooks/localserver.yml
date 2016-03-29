@@ -1,0 +1,7 @@
+- hosts: local
+  vars_files:
+  - vars.yml
+  tasks:
+  - name: Install Lynx on Local server
+    apt: pkg=lynx state=installed update_cache=true
+

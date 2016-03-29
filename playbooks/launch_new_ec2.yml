@@ -1,0 +1,16 @@
+--- # Master playbook to launch server on ec2
+
+- hosts: local
+  user: test
+  become: yes
+  become_method: sudo
+  connection: ssh
+  vars:
+    - path: "/home/test"
+    - instance_type: t1.micro
+    - image: ami-9dbea4fc
+    - region: us-west-2
+  vars_files:
+    - "{{path}}/secure.yml"
+  roles:
+    - ec2
